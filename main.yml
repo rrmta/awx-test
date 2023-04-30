@@ -1,0 +1,11 @@
+---
+- name: Test ansible connectivity.
+  hosts: all
+
+  tasks:
+    - name: Get uptime.
+      shell: uptime
+      register: output
+
+    - name: Print uptime.
+      debug: var=output.stdout
